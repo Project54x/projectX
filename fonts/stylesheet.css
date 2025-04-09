@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Cy Grotesk Key';
+    src: url('CyGroteskKeyBold.woff2') format('woff2'),
+        url('CyGroteskKeyBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cy Grotesk Grand';
+    src: url('CyGroteskGrandBold.woff2') format('woff2'),
+        url('CyGroteskGrandBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cy Grotesk Wide';
+    src: url('CyGroteskWideBold.woff2') format('woff2'),
+        url('CyGroteskWideBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Bold.woff2') format('woff2'),
+        url('FiraMono-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Regular.woff2') format('woff2'),
+        url('FiraMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('MonumentExtended-Regular.woff2') format('woff2'),
+        url('MonumentExtended-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('FiraMono-Medium.woff2') format('woff2'),
+        url('FiraMono-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('Inter18pt-Regular.woff2') format('woff2'),
+        url('Inter18pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mynerve';
+    src: url('Mynerve-Regular.woff2') format('woff2'),
+        url('Mynerve-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('MonumentExtended-Ultrabold.woff2') format('woff2'),
+        url('MonumentExtended-Ultrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('Inter18pt-Bold.woff2') format('woff2'),
+        url('Inter18pt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

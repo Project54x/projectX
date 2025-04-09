@@ -1,0 +1,36 @@
+@import './breakpoints';
+@import './vars';
+
+body {
+  font-family: $font-family-grotesk-grand, sans-serif;
+}
+
+
+.lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+[class*='__container'] {
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+.main {
+  flex: 1 1 auto;
+}
+
+section {
+  scroll-margin-top: 200px;
+}
+
