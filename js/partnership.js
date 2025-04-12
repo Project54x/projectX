@@ -131,9 +131,21 @@ function animateZIndex(el) {
     if (newZ > 30) {
       el.style.filter = 'grayscale(1)';
       el.style.opacity = '1';
+
+      gsap.to(el, {
+        scale: 1,
+        duration: 1,
+        ease: "power2.out"
+      });
     } else {
       el.style.filter = 'grayscale(1) blur(2px)';
       el.style.opacity = '1';
+
+      gsap.to(el, {
+        scale: 0.85,
+        duration: 1,
+        ease: "power2.out"
+      });
     }
   }, 3000 + Math.random() * 3000);
 }

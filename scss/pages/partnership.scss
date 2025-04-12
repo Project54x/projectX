@@ -88,8 +88,6 @@
         align-items: flex-end;
         margin-bottom: 198px;
         padding: 0px 32px;
-        position: relative;
-        z-index: 999;
 
         .partnership__text:nth-child(1) {
             margin-bottom: 82px;
@@ -98,6 +96,11 @@
 
         .partnership__text:nth-child(2) {
             max-width: 350px;
+        }
+
+        .partnership__text {
+            position: relative;
+            z-index: 999;
         }
     }
 
