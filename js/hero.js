@@ -160,6 +160,20 @@ window.addEventListener("scroll", onScroll);
 window.addEventListener("touchmove", onScroll); 
 window.addEventListener("resize", onScroll); 
 
+const fixedOverlay = document.querySelector('.hero__video-overlay.hero__mob');
+
+window.addEventListener('scroll', () => {
+  const rect = heroSection.getBoundingClientRect();
+  if(fixedOverlay) {
+    if (rect.top <= 0 && rect.bottom >= 200) {
+      fixedOverlay.style.display = 'block';
+    } else {
+      fixedOverlay.style.display = 'none';
+    }
+  }
+});
+
+
 
 // ANIMATED TEXT
 function animateLettersInLine(lineElement, delayStart = 0) {

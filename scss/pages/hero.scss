@@ -254,11 +254,6 @@
 
         &__mob {
             display: block;
-
-            &.hero__video-overlay {
-                height: 50% !important;
-                opacity: 1 !important;
-            }
         }
     }
 }
@@ -304,17 +299,6 @@
                 img {
                     height: 500px;
                 }
-            }
-        }
-    }
-}
-
-@media(max-width: 390px) {
-    .hero {
-        &__animated {
-
-            &-text {
-              
             }
         }
     }
