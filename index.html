@@ -4,13 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/fonts/cy_grotesk-grandbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/cy_grotesk-grandbold.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/FiraMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/FiraMono-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="no-scroll">
   <div class="wrapper">
     <div class="loader">
-      <video src="./media/loader.webm" autoplay muted loop class="loader__video"></video>
+      <video autoplay muted loop playsinline class="loader__video">
+        <source src="./media/loader.webm" type="video/webm">
+      </video>
 
       <div class="loader__row">
         <div class="loader__row-top">
