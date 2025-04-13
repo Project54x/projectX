@@ -210,6 +210,10 @@ function observeAndAnimate() {
   const leftBottom = document.querySelector('.hero__animated-left .line-bottom');
   const rightTop = document.querySelector('.hero__animated-right .line-top');
   const rightBottom = document.querySelector('.hero__animated-right .line-bottom');
+  leftTop.style.opacity = '0';
+  leftBottom.style.opacity = '0';
+  rightTop.style.opacity = '0';
+  rightBottom.style.opacity = '0';
 
   let hasAnimated = false;
 
@@ -217,6 +221,10 @@ function observeAndAnimate() {
     entries.forEach(entry => {
       if (entry.isIntersecting && !hasAnimated) {
         hasAnimated = true;
+        leftTop.style.opacity = '1';
+        leftBottom.style.opacity = '1';
+        rightTop.style.opacity = '1';
+        rightBottom.style.opacity = '1';
 
         const pauseBetweenLines = 150;
 

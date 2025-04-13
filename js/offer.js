@@ -52,19 +52,21 @@ function animateLetters(element, delayStart = 0) {
   }, 50); 
 }
 
-function animateOfferTitlesAndDetails() {
+function animateOfferTitles() {
   const titles = document.querySelectorAll('.offer__title');
-  const details = document.querySelector('.offer__details');
-  if (!titles.length || !details) return;
+  titles.forEach(title => {
+    title.style.opacity = '0';
+  });
+  if (!titles.length) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         titles.forEach((title, idx) => {
+          title.style.opacity = '1';
           animateLetters(title, idx * 500);
         });
 
-        details.classList.add('animate');
         observer.disconnect();
       }
     });
@@ -76,5 +78,5 @@ function animateOfferTitlesAndDetails() {
 window.addEventListener('DOMContentLoaded', () => {
   animateOfferBadge();
   animateOfferList();
-  animateOfferTitlesAndDetails();
+  animateOfferTitles();
 });
