@@ -1,6 +1,11 @@
 @import './breakpoints';
 @import './vars';
 
+html, body {
+  background: $black-200;
+  overscroll-behavior: none;
+}
+
 body {
   font-family: $font-family-grotesk-grand, sans-serif;
   color: $white-100;
