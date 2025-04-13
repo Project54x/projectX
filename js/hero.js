@@ -115,6 +115,12 @@ function updateOverlay(frameIndex) {
   overlay.style.height = "0%";
 }
 
+function getScrollMultiplier() {
+  const width = window.innerWidth;
+  if (width <= 768) return 0.7; 
+  return 1;                     
+}
+
 function onScroll() {
   if (!ticking) {
     window.requestAnimationFrame(() => {
@@ -136,7 +142,8 @@ function onScroll() {
         return;
       }
 
-      const scrollFraction = Math.min(scrollTop / maxScroll, 1);
+      const scrollMultiplier = getScrollMultiplier();
+      const scrollFraction = Math.min((scrollTop * scrollMultiplier) / maxScroll, 1);      
       const frameIndex = Math.max(1, Math.floor(scrollFraction * totalFrames));
 
       if (scrollTop < previousScrollTop && heroRect.top < window.innerHeight) {
