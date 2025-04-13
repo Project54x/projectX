@@ -7,8 +7,55 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="no-scroll">
   <div class="wrapper">
+    <div class="loader">
+      <video src="./media/loader.webm" autoplay muted loop class="loader__video"></video>
+
+      <div class="loader__row">
+        <div class="loader__row-top">
+          <div class="loader__percent">
+            <h3 class="loader__percent-number">
+              15
+            </h3>
+            <h3 class="loader__percent-text">
+              %
+            </h3>
+          </div>
+          <div class="loader__line">
+            <div class="loader__line-inner"></div>
+          </div>
+          <img src="./img/devils-logo-small.svg" alt="" class="loader__logo">
+        </div>
+
+        <div class="loader__row-bottom">
+          <div class="loader__row-decor"></div>
+          <div class="loader__row-decor"></div>
+          <div class="loader__row-decor"></div>
+
+          <div class="loader__text-group">
+            <p class="loader__text loader__text-bullet">
+              •
+            </p>
+            <p class="loader__text">
+              Loading...
+            </p>
+          </div>
+
+          <img src="./img/target.svg" alt="" class="loader__img">
+
+          <div class="loader__text-group">
+            <p class="loader__text loader__text-bullet">
+              •
+            </p>
+            <p class="loader__text">
+              2025
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <section class="hero">
       <img src="img/hero-title.svg" alt="" class="hero__title">
       <div class="hero__video">
@@ -404,6 +451,7 @@
   <script src="js/hero.js"></script>
    <script src="js/offer.js"></script>
    <script src="js/partnership.js"></script>
+   <script src="js/loader.js"></script>
 </body>
 
 </html>
