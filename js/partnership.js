@@ -150,7 +150,7 @@ function animateZIndex(el) {
   }, 3000 + Math.random() * 3000);
 }
 
-window.on('resize', () => {
+window.addEventListener('resize', () => {
     imgs.forEach((img, index) => {
         const basePos = getBasePosition(index);
     

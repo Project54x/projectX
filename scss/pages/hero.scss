@@ -15,6 +15,10 @@
         margin-bottom: 50px;
     }
 
+    &__scroll {
+        height: 1000px;
+    }
+
     &__video {
         width: 100%;
         position: fixed;
@@ -33,7 +37,6 @@
             z-index: 9999;
             height: 0%; 
             opacity: 0;
-            background: linear-gradient(360deg, #0A0A0A 30.22%, rgba(10, 10, 10, 0) 100%);
             transition: height 0.3s ease-out, opacity 0.5s ease-out;
             pointer-events: none; 
 
@@ -63,6 +66,10 @@
         left: 50%;
         transform: translateX(-50%);
         top: 0px;
+
+        &-mob {
+            display: none;
+        }
     }
 
     &__details {
@@ -107,6 +114,7 @@
         margin-top: 300px;
         position: relative;
         z-index: 9999;
+        background: linear-gradient(360deg, #0A0A0A 90.22%, rgba(10, 10, 10, 0) 100%);
 
         &-text {
             font-family: $font-family-grotesk-grand;
@@ -229,6 +237,10 @@
             }
         }
 
+        &__scroll {
+            height: 0px;
+        }
+
         &__details {
             padding: 0px 16px;
         }
@@ -253,6 +265,12 @@
                     transform: translateX(-50%);
                     width: auto;
                 }
+            }
+        }
+
+        &__bg {
+            &-mob {
+                display: block;
             }
         }
 
