@@ -1,0 +1,360 @@
+@import '../config/breakpoints';
+@import '../config/mixin';
+@import '../config/fonts';
+@import '../config/vars';
+
+.offer {
+    padding: 150px 30px 70px 30px;
+    position: relative;
+    margin-top: 230px;
+
+    &__title {
+        font-family: $font-family-grotesk-grand;
+        font-weight: 700;
+        font-size: 186px;
+        line-height: 80%;
+        letter-spacing: -2px;
+        text-transform: uppercase;
+        color: $black-100;
+
+        &-light {
+            color: #616364;
+        }
+
+        span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+          }
+    }
+
+    &__row {
+        margin-top: 165px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-left: 270px
+    }
+
+    &__list {
+        max-width: 724px;
+        width: 100%;
+        height: 358px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+        margin-bottom: 22px;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: transform, opacity;
+
+        &::-webkit-scrollbar {
+          display: none; 
+        }
+
+        &.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+          }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: $font-family-fira-mono;
+        padding-bottom: 32px;
+        border-bottom: 2px solid $black-100;
+        gap: 60px;
+
+        &-left {
+            display: flex;
+        }
+
+        &-number {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 100%;
+            color: $red-100;
+            width: 90px;
+            min-width: 90px;
+            padding-top: 5.5px;
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 100%;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: $font-family-grotesk-grand;
+            margin-bottom: 2px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        font-family: $font-family-fira-mono;
+        opacity: 0.8;
+
+        &-right {
+            text-align: right;
+        }
+    }
+
+    &__details {
+        max-width: 358px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 90px;
+
+        .offer__text {
+          text-transform: uppercase;
+        }
+
+        &-message {
+            max-width: 295px;
+            position: relative;
+            padding: 15px 30px;
+
+            &-corner {
+                position: absolute;
+
+                &:nth-child(1) {
+                    top: 0;
+                    left: 0;
+                }
+
+                &:nth-child(2) {
+                    top: 0;
+                    right: 0;
+                }
+
+                &:nth-child(3) {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &:nth-child(4) {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    &__img {
+        width: 1047px;
+        height: 1047px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        right: 100px;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-200px) rotate(0deg);
+        transition: opacity 0.3s ease-out;
+        will-change: transform, opacity;
+
+        &.animate-in {
+            opacity: 1;
+            animation: drop 0.6s ease-out forwards, swing 2s ease-in-out infinite;
+            animation-delay: 0s, 0.6s;
+        }
+    }
+}
+
+@keyframes drop {
+    from {
+      transform: translateY(-200px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(3deg);
+    }
+    50% {
+      transform: rotate(-3deg);
+    }
+    75% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+@include media-breakpoint-down(xxl) {
+    .offer {
+      &__title {
+        font-size: 170px;
+      }
+
+      &__img {
+        width: 825px;
+        height: 825px;
+        top: 50px;
+      }
+
+      &__row {
+        padding-left: 0px;
+        margin-top: 210px;
+      }
+
+      &__item {
+        &-title {
+          font-size: 28px;
+        }
+      }
+
+      &__list {
+        height: 343px;
+      }
+    }
+}
+
+@include media-breakpoint-down(xl) {
+  .offer {
+    padding: 16px;
+
+    &__title {
+      font-size: 120px;
+    }
+
+    &__row {
+      margin-top: 140px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 80px;
+    }
+
+    &__list {
+      max-width: 665px;
+      height: 328px;
+    }
+
+    &__item {
+      gap: 0px;
+
+      &-title {
+        font-size: 22px;
+      }
+    }
+
+    &__details {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &__text {
+      &-right {
+        max-width: 358px;
+      }
+    }
+
+    &__img {
+      width: 605px;
+      height: 605px;
+      right: -100px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .offer {
+    &__title {
+      font-size: 92px;
+
+      &-light {
+        color: $black-100;
+      }
+    }
+
+    &__row {
+      flex-direction: column-reverse;
+      gap: 240px;
+    }
+
+    &__details {
+      flex-direction: column;
+      gap: 60px;
+
+      &-message {
+        max-width: 266px;
+      }
+    }
+
+    &__img {
+      width: 652px;
+      height: 700px;  
+      left: -150px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .offer {
+    &__row {
+      gap: 60px;
+      margin-top: 356px;
+    }
+
+    &__title {
+      font-size: 50px;
+      white-space: nowrap;
+    }
+
+    &__img {
+      width: 439px;
+      height: 439px;
+      right: -70px;
+      left: auto;
+      top: 0;
+    }
+
+    &__list {
+      height: 217px;
+    }
+
+    &__item {
+      gap: 8px;
+
+      &-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      &-number {
+        width: 48px;
+        min-width: 48px;
+        padding-top: 0px;
+      }
+
+      &-left {
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+}

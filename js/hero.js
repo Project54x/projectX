@@ -81,8 +81,8 @@ function updateFrame(index) {
 function updateOverlay(frameIndex) {
   const fadeOutStart = 1;
   const fadeOutEnd = 60;
-  const secondAppearStart = 120;
-  const secondAppearEnd = 160;
+  const secondAppearStart = 150;
+  const secondAppearEnd = 200;
 
   if (frameIndex < fadeOutStart) {
     overlay.style.opacity = "1";
@@ -122,18 +122,22 @@ function onScroll() {
       const heroHeight = heroSection.offsetHeight;
       const maxScroll = Math.max(heroHeight - window.innerHeight - 100, 1);
 
-      const scrollFraction = Math.min(scrollTop / maxScroll, 1);
-      const frameIndex = Math.max(1, Math.floor(scrollFraction * totalFrames));
-
       const heroRect = heroSection.getBoundingClientRect();
+      const isInView = heroRect.top < window.innerHeight && heroRect.bottom > 0;
 
-      if (heroRect.bottom <= 0) {
-        overlay.style.transition = "opacity 0.5s, height 0.5s";
+      if (!isInView) {
+        if (currentFrame !== 201) {
+          currentFrame = 201;
+          updateFrame(currentFrame);
+        }
         overlay.style.opacity = "0";
         overlay.style.height = "0%";
         ticking = false;
         return;
       }
+
+      const scrollFraction = Math.min(scrollTop / maxScroll, 1);
+      const frameIndex = Math.max(1, Math.floor(scrollFraction * totalFrames));
 
       if (scrollTop < previousScrollTop && heroRect.top < window.innerHeight) {
         overlay.style.transition = "opacity 0.5s, height 0.5s";
@@ -156,9 +160,24 @@ function onScroll() {
   }
 }
 
+
 window.addEventListener("scroll", onScroll);
 window.addEventListener("touchmove", onScroll); 
 window.addEventListener("resize", onScroll); 
+
+const fixedOverlay = document.querySelector('.hero__video-overlay.hero__mob');
+
+window.addEventListener('scroll', () => {
+  const rect = heroSection.getBoundingClientRect();
+  if(fixedOverlay) {
+    if (rect.top <= 0 && rect.bottom >= 200) {
+      fixedOverlay.style.display = 'block';
+    } else {
+      fixedOverlay.style.display = 'none';
+    }
+  }
+});
+
 
 
 // ANIMATED TEXT
@@ -191,6 +210,10 @@ function observeAndAnimate() {
   const leftBottom = document.querySelector('.hero__animated-left .line-bottom');
   const rightTop = document.querySelector('.hero__animated-right .line-top');
   const rightBottom = document.querySelector('.hero__animated-right .line-bottom');
+  leftTop.style.opacity = '0';
+  leftBottom.style.opacity = '0';
+  rightTop.style.opacity = '0';
+  rightBottom.style.opacity = '0';
 
   let hasAnimated = false;
 
@@ -198,6 +221,10 @@ function observeAndAnimate() {
     entries.forEach(entry => {
       if (entry.isIntersecting && !hasAnimated) {
         hasAnimated = true;
+        leftTop.style.opacity = '1';
+        leftBottom.style.opacity = '1';
+        rightTop.style.opacity = '1';
+        rightBottom.style.opacity = '1';
 
         const pauseBetweenLines = 150;
 

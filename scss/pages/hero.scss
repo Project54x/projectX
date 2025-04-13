@@ -22,6 +22,7 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 999;
+        pointer-events: none;
         
         &-overlay {
             width: 100%;
@@ -44,10 +45,13 @@
         &-frames {  
             position: relative;
             height: 100vh;
+            pointer-events: none;
+
            img {
             width: 100%;
             position: absolute;
             bottom: 0px;
+            pointer-events: none;
            }
         }
     }
@@ -254,11 +258,9 @@
 
         &__mob {
             display: block;
-
-            &.hero__video-overlay {
-                height: 50% !important;
-                opacity: 1 !important;
-            }
+            opacity: 1 !important;
+            height: 50% !important;
+            bottom: -50px;
         }
     }
 }
@@ -304,17 +306,6 @@
                 img {
                     height: 500px;
                 }
-            }
-        }
-    }
-}
-
-@media(max-width: 390px) {
-    .hero {
-        &__animated {
-
-            &-text {
-              
             }
         }
     }

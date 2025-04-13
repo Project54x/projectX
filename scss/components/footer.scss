@@ -71,6 +71,10 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    &__nav {
+        margin-bottom: 221px;
+    }
+
     &__text {
         font-weight: 400;
         font-size: 14px;
@@ -177,7 +181,6 @@
         &__block {
             margin: 16px 16px 0px 16px;
             border-right: none;
-            border-bottom: none;
 
             &-right {
                 display: none;

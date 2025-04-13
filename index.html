@@ -4,11 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/fonts/cy_grotesk-grandbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/cy_grotesk-grandbold.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/FiraMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/FiraMono-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="no-scroll">
   <div class="wrapper">
+    <div class="loader">
+      <video autoplay muted loop playsinline class="loader__video">
+        <source src="./media/loader.webm" type="video/webm">
+      </video>
+
+      <div class="loader__row">
+        <div class="loader__row-top">
+          <div class="loader__percent">
+            <h3 class="loader__percent-number">
+              15
+            </h3>
+            <h3 class="loader__percent-text">
+              %
+            </h3>
+          </div>
+          <div class="loader__line">
+            <div class="loader__line-inner"></div>
+          </div>
+          <img src="./img/devils-logo-small.svg" alt="" class="loader__logo">
+        </div>
+
+        <div class="loader__row-bottom">
+          <div class="loader__row-decor"></div>
+          <div class="loader__row-decor"></div>
+          <div class="loader__row-decor"></div>
+
+          <div class="loader__text-group">
+            <p class="loader__text loader__text-bullet">
+              •
+            </p>
+            <p class="loader__text">
+              Loading...
+            </p>
+          </div>
+
+          <img src="./img/target.svg" alt="" class="loader__img">
+
+          <div class="loader__text-group">
+            <p class="loader__text loader__text-bullet">
+              •
+            </p>
+            <p class="loader__text">
+              2025
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <section class="hero">
       <img src="img/hero-title.svg" alt="" class="hero__title">
       <div class="hero__video">
@@ -46,12 +99,240 @@
           <span class="line line-bottom">for</span>
           <br>
           <span class="line line-top">5 years</span>
-        </h2>
-        
+        </h2> 
       </div>
-      
     </section>
 
+    <section class="partnership">
+    <div class="partnership__images">
+      <img src="img/partners-2.jpeg" alt="" class="partnership__img">
+      <img src="img/partners-3.jpeg" alt="" class="partnership__img">
+      <img src="img/partners-4.png" alt="" class="partnership__img">
+      <img src="img/partners-2.jpeg" alt="" class="partnership__img" >
+      <img src="img/partners-4.png" alt="" class="partnership__img">
+      <img src="img/partners-1.jpeg" alt="" class="partnership__img" >
+      <img src="img/partners-2.jpeg" alt="" class="partnership__img">
+      <img src="img/partners-1.jpeg" alt="" class="partnership__img">
+    </div>
+
+      <div class="partnership__row">
+        <p class="partnership__text animate-text">
+          We manage traffic at all stages – from integration to scaling.
+        </p>
+        <p class="partnership__text partnership__text-right animate-text">
+          We test new brands in promising GEOs and collaborate with leaders with proven conversions.
+        </p>
+      </div>
+
+      <div class="partnership__title">
+        <div class="partnership__marquee">
+          <h2 class="partnership__title-text">Partnership</h2>
+          <h2 class="partnership__title-text">/</h2>
+          <h2 class="partnership__title-text">Partnership</h2>
+          <h2 class="partnership__title-text">/</h2>
+          <h2 class="partnership__title-text">Partnership</h2>
+          <h2 class="partnership__title-text">/</h2>
+          <h2 class="partnership__title-text">Partnership</h2>
+          <h2 class="partnership__title-text">/</h2>
+          <h2 class="partnership__title-text">Partnership</h2>
+          <h2 class="partnership__title-text">/</h2>
+          <h2 class="partnership__title-text">Partnership</h2>
+        </div>
+      </div>
+      
+      <div class="partnership__bottom">
+        <p class="partnership__text animate-text">
+          We guarantee analytics, predictable results, transparency, and high quality. Thousands of tests have defined our key advantages in the market.
+        </p>
+      </div>
+    </section>
+
+    <section class="offer">
+      <h2 class="offer__title">
+        WHAT DO
+      </h2>
+      <h2 class="offer__title offer__title-light">
+        WE OFFER?
+      </h2>
+
+      <img src="img/badge.png" alt="" class="offer__img">
+
+      <div class="offer__row">
+        <div class="offer__list">
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-01
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  A global ecosystem
+                </h3>
+                <p class="offer__text">
+                  Media buying, creativity, analytics, development, etc.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-02
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Career growth
+                </h3>
+                <p class="offer__text">
+                  The opportunity to develop in a dynamic environment with clear perspectives and support.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-03
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Work with experts
+                </h3>
+                <p class="offer__text">
+                  Exchange experiences with leading market specialists.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-04
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Innovation and resources
+                </h3>
+                <p class="offer__text">
+                  access to the best tools, exclusive offers, and technological solutions.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-05
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Flexibility & Freedom
+                </h3>
+                <p class="offer__text">
+                  Work the way that suits you best. The main thing is the result.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-06
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Reward System
+                </h3>
+                <p class="offer__text">
+                  Competitive salary, bonuses, and incentives for achieved results.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-07
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Psychologist Support
+                </h3>
+                <p class="offer__text">
+                  Professional assistance for your emotional and mental well-being.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-08
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  Course Reimbursement
+                </h3>
+                <p class="offer__text">
+                  We cover the cost of courses to enhance your skills and knowledge.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+
+          <div class="offer__item">
+            <div class="offer__item-left">
+              <p class="offer__item-number">
+                NO-09
+              </p>
+              <div class="offer__item-info">
+                <h3 class="offer__item-title">
+                  English Language Courses
+                </h3>
+                <p class="offer__text">
+                  Improve your language skills and unlock new career opportunities at the company’s expense.
+                </p>
+              </div>
+            </div>
+            <img src="./img/croos-lighter.svg" alt="">
+          </div>
+        </div>
+
+        <div class="offer__details">
+          <div class="offer__details-message animate-text">
+            <img src="img/croos-lighter.svg" alt="" class="offer__details-message-corner">
+            <img src="img/croos-lighter.svg" alt="" class="offer__details-message-corner">
+            <img src="img/croos-lighter.svg" alt="" class="offer__details-message-corner">
+            <img src="img/croos-lighter.svg" alt="" class="offer__details-message-corner">
+            <p class="offer__text">
+              At DEVILS, people don’t just work — they grow.
+            </p>
+          </div>
+
+          <p class="offer__text offer__text-right animate-text">
+            It’s more than a job: it’s one of the strongest ecosystems in media buying, technology, and analytics.
+            <br>
+            <br>
+            We create conditions for development, support initiative, and help achieve new heights.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="footer__container">
@@ -88,9 +369,9 @@
               </a>
             </nav>
 
-            <a href="" class="footer__btn btn-primary">
+            <!-- <a href="" class="footer__btn btn-primary">
               contact us
-            </a>
+            </a> -->
 
             <div class="footer__row footer__details">
               <div class="footer__detail">
@@ -135,20 +416,20 @@
           </div>
 
           <div class="footer__block-right">
-              <a href="" class="footer__link-top footer__text">
+              <a href="#" class="footer__link-top footer__text">
                 BACK TO TOP
                 <img src="./img/btn-top.svg" alt="">
               </a>
           </div>
         </div>
 
-        <div class="footer__mob">
+        <!-- <div class="footer__mob">
           <div class="footer__btn-decor"></div>
           <a href="" class="footer__btn btn-primary footer__mob">
             contact us
           </a>
           <div class="footer__btn-decor"></div>
-        </div>
+        </div> -->
 
         <div class="footer__bottom">
           <div class="footer__row">
@@ -164,7 +445,7 @@
             © Devils™ 2025. All rights reserved
           </p>
 
-          <a href="" class="footer__link-top footer__mob">
+          <a href="#" class="footer__link-top footer__mob">
             <img src="./img/btn-top.svg" alt="">
           </a>
         </div>
@@ -172,7 +453,12 @@
     </footer>
   </div>
   <script type="module" src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="js/hero.js"></script>
+   <script src="js/offer.js"></script>
+   <script src="js/partnership.js"></script>
+   <script src="js/loader.js"></script>
+   <script src="js/animateText.js"></script>
 </body>
 
 </html>
