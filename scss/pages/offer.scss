@@ -166,7 +166,7 @@
 
         &.animate-in {
             opacity: 1;
-            animation: drop 0.6s ease-out forwards, swing 2s ease-in-out infinite;
+            animation: drop 1s ease-out forwards, swing 3s ease-in-out infinite;
             animation-delay: 0s, 0.6s;
         }
     }
