@@ -22,8 +22,8 @@
 
     &__video {
         width: 100%;
-        position: fixed;
-        bottom: 0;
+        position: absolute;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: 999;
@@ -32,18 +32,13 @@
         &-overlay {
             width: 100%;
             background: linear-gradient(360deg, #0A0A0A 30.22%, rgba(10, 10, 10, 0) 100%);
-            position: fixed;
+            position: absolute;
             left: 0;
             bottom: 0px;
             z-index: 9999;
-            height: 0%; 
-            opacity: 0;
+            height: 10%; 
             transition: height 0.3s ease-out, opacity 0.5s ease-out;
             pointer-events: none; 
-
-            &.hidden {
-                opacity: 0;
-            }
         }
 
         &-frames {  
@@ -51,7 +46,7 @@
             height: 100vh;
             pointer-events: none;
 
-           img {
+           img, video {
             width: 100%;
             position: absolute;
             bottom: 0px;
@@ -62,8 +57,8 @@
 
     &__bg {
         position: absolute;
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100vh;
         left: 50%;
         transform: translateX(-50%);
         top: 0px;
@@ -115,7 +110,6 @@
         margin-top: 300px;
         position: relative;
         z-index: 9999;
-        background: linear-gradient(360deg, #0A0A0A 90.22%, rgba(10, 10, 10, 0) 100%);
 
         &-text {
             font-family: $font-family-grotesk-grand;
@@ -217,7 +211,7 @@
                 position: relative;
                 height: 100vh;
 
-                img {
+                img, video {
                     height: 100vh;
                     object-fit: cover;
                 }
@@ -259,7 +253,7 @@
             &-frames {
                 height: 700px;
     
-                img {
+                img, video {
                     height: 700px;
                     top: 0;
                     left: 50%;
@@ -270,6 +264,8 @@
         }
 
         &__bg {
+            height: 500px;
+
             &-mob {
                 display: block;
             }
@@ -322,7 +318,7 @@
             &-frames {
                 height: 500px;
 
-                img {
+                img, video {
                     height: 500px;
                 }
             }

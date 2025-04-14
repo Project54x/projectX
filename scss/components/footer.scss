@@ -98,6 +98,11 @@
 
         &-text {
             opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        &:hover &-text {
+            opacity: 1;
         }
 
         &::after {
@@ -138,6 +143,14 @@
     &__socials {
         display: flex;
         gap: 16px;
+
+        a {
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
     }
 
     &__bottom {

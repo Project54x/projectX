@@ -65,125 +65,125 @@ elements.forEach(el => {
 
 // SCROLLING FRAMES
 
-const frame = document.getElementById("frame");
-const overlay = document.querySelector(".hero__video-overlay");
-const heroSection = document.querySelector(".hero");
-const totalFrames = 201;
+// const frame = document.getElementById("frame");
+// const overlay = document.querySelector(".hero__video-overlay");
+// const heroSection = document.querySelector(".hero");
+// const totalFrames = 70;
 
-let currentFrame = 1;
-let ticking = false;
-let previousScrollTop = window.scrollY;
+// let currentFrame = 1;
+// let ticking = false;
+// let previousScrollTop = window.scrollY;
 
-function updateFrame(index) {
-  frame.src = `frames/MAIN_ANIM (${index}).webp`;
-}
+// function updateFrame(index) {
+//   frame.src = `frames/MAIN_ANIM (${index}).webp`;
+// }
 
-function updateOverlay(frameIndex) {
-  const fadeOutStart = 1;
-  const fadeOutEnd = 60;
-  const secondAppearStart = 150;
-  const secondAppearEnd = 200;
+// function updateOverlay(frameIndex) {
+//   const fadeOutStart = 1;
+//   const fadeOutEnd = 60;
+//   // const secondAppearStart = 150;
+//   // const secondAppearEnd = 200;
 
-  if (frameIndex < fadeOutStart) {
-    overlay.style.opacity = "1";
-    overlay.style.height = "50%";
-    return;
-  }
+//   if (frameIndex < fadeOutStart) {
+//     overlay.style.opacity = "1";
+//     overlay.style.height = "50%";
+//     return;
+//   }
 
-  if (frameIndex >= fadeOutStart && frameIndex <= fadeOutEnd) {
-    const progress = (frameIndex - fadeOutStart) / (fadeOutEnd - fadeOutStart);
-    const reverse = 1 - progress;
-    overlay.style.opacity = `${reverse}`;
-    overlay.style.height = `${reverse * 50}%`;
-    return;
-  }
+//   if (frameIndex >= fadeOutStart && frameIndex <= fadeOutEnd) {
+//     const progress = (frameIndex - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+//     const reverse = 1 - progress;
+//     overlay.style.opacity = `${reverse}`;
+//     overlay.style.height = `${reverse * 50}%`;
+//     return;
+//   }
 
-  if (frameIndex > fadeOutEnd && frameIndex < secondAppearStart) {
-    overlay.style.opacity = "0";
-    overlay.style.height = "0%";
-    return;
-  }
+//   // if (frameIndex > fadeOutEnd && frameIndex < secondAppearStart) {
+//   //   overlay.style.opacity = "0";
+//   //   overlay.style.height = "0%";
+//   //   return;
+//   // }
 
-  if (frameIndex >= secondAppearStart && frameIndex <= secondAppearEnd) {
-    const progress = (frameIndex - secondAppearStart) / (secondAppearEnd - secondAppearStart);
-    overlay.style.opacity = `${progress}`;
-    overlay.style.height = `${progress * 100}%`;
-    return;
-  }
+//   // if (frameIndex >= secondAppearStart && frameIndex <= secondAppearEnd) {
+//   //   const progress = (frameIndex - secondAppearStart) / (secondAppearEnd - secondAppearStart);
+//   //   overlay.style.opacity = `${progress}`;
+//   //   overlay.style.height = `${progress * 100}%`;
+//   //   return;
+//   // }
 
-  overlay.style.opacity = "0";
-  overlay.style.height = "0%";
-}
+//   overlay.style.opacity = "0";
+//   overlay.style.height = "0%";
+// }
 
-function getScrollMultiplier() {
-  const width = window.innerWidth;
-  if (width <= 768) return 0.7; 
-  return 1;                     
-}
+// function getScrollMultiplier() {
+//   const width = window.innerWidth;
+//   if (width <= 768) return 0.7; 
+//   return 1;                     
+// }
 
-function onScroll() {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const scrollTop = window.scrollY;
-      const heroHeight = heroSection.offsetHeight;
-      const maxScroll = Math.max(heroHeight - window.innerHeight - 100, 1);
+// function onScroll() {
+//   if (!ticking) {
+//     window.requestAnimationFrame(() => {
+//       const scrollTop = window.scrollY;
+//       const heroHeight = heroSection.offsetHeight;
+//       const maxScroll = Math.max(heroHeight - window.innerHeight - 100, 1);
 
-      const heroRect = heroSection.getBoundingClientRect();
-      const isInView = heroRect.top < window.innerHeight && heroRect.bottom > 0;
+//       const heroRect = heroSection.getBoundingClientRect();
+//       const isInView = heroRect.top < window.innerHeight && heroRect.bottom > 0;
 
-      if (!isInView) {
-        if (currentFrame !== 201) {
-          currentFrame = 201;
-          updateFrame(currentFrame);
-        }
-        overlay.style.opacity = "0";
-        overlay.style.height = "0%";
-        ticking = false;
-        return;
-      }
+//       if (!isInView) {
+//         if (currentFrame !== 201) {
+//           currentFrame = 201;
+//           updateFrame(currentFrame);
+//         }
+//         overlay.style.opacity = "0";
+//         overlay.style.height = "0%";
+//         ticking = false;
+//         return;
+//       }
 
-      const scrollMultiplier = getScrollMultiplier();
-      const scrollFraction = Math.min((scrollTop * scrollMultiplier) / maxScroll, 1);      
-      const frameIndex = Math.max(1, Math.floor(scrollFraction * totalFrames));
+//       const scrollMultiplier = getScrollMultiplier();
+//       const scrollFraction = Math.min((scrollTop * scrollMultiplier) / maxScroll, 1);      
+//       const frameIndex = Math.max(1, Math.floor(scrollFraction * totalFrames));
 
-      if (scrollTop < previousScrollTop && heroRect.top < window.innerHeight) {
-        overlay.style.transition = "opacity 0.5s, height 0.5s";
-        overlay.style.opacity = "1";
-        overlay.style.height = "50%";
-      }
+//       if (scrollTop < previousScrollTop && heroRect.top < window.innerHeight) {
+//         overlay.style.transition = "opacity 0.5s, height 0.5s";
+//         overlay.style.opacity = "1";
+//         overlay.style.height = "50%";
+//       }
 
-      if (frameIndex !== currentFrame) {
-        currentFrame = frameIndex;
-        updateFrame(currentFrame);
-      }
+//       if (frameIndex !== currentFrame) {
+//         currentFrame = frameIndex;
+//         updateFrame(currentFrame);
+//       }
 
-      updateOverlay(frameIndex);
+//       updateOverlay(frameIndex);
 
-      previousScrollTop = scrollTop;
-      ticking = false;
-    });
+//       previousScrollTop = scrollTop;
+//       ticking = false;
+//     });
 
-    ticking = true;
-  }
-}
+//     ticking = true;
+//   }
+// }
 
 
-window.addEventListener("scroll", onScroll);
-window.addEventListener("touchmove", onScroll); 
-window.addEventListener("resize", onScroll); 
+// window.addEventListener("scroll", onScroll);
+// window.addEventListener("touchmove", onScroll); 
+// window.addEventListener("resize", onScroll); 
 
-const fixedOverlay = document.querySelector('.hero__video-overlay.hero__mob');
+// const fixedOverlay = document.querySelector('.hero__video-overlay.hero__mob');
 
-window.addEventListener('scroll', () => {
-  const rect = heroSection.getBoundingClientRect();
-  if(fixedOverlay) {
-    if (rect.top <= 0 && rect.bottom >= 200) {
-      fixedOverlay.style.display = 'block';
-    } else {
-      fixedOverlay.style.display = 'none';
-    }
-  }
-});
+// window.addEventListener('scroll', () => {
+//   const rect = heroSection.getBoundingClientRect();
+//   if(fixedOverlay) {
+//     if (rect.top <= 0 && rect.bottom >= 200) {
+//       fixedOverlay.style.display = 'block';
+//     } else {
+//       fixedOverlay.style.display = 'none';
+//     }
+//   }
+// });
 
 
 
