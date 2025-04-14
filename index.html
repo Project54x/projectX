@@ -71,8 +71,11 @@
       <img src="img/hero-title.svg" alt="" class="hero__title">
       <div class="hero__video">
           <div class="hero__video-frames">
-              <img id="frame" src="frames/MAIN_ANIM (1).webp" alt="frame" />
-          </div>
+              <!-- <img id="frame" src="frames/MAIN_ANIM (1).webp" alt="frame" /> -->
+              <video autoplay muted playsinline class="hero__video-frames">
+                <source src="./media/hero-video.webm" type="video/webm">
+              </video>
+          </div> 
         <div class="hero__video-overlay"></div>
         <div class="hero__video-overlay hero__mob"></div>
       </div>
@@ -94,7 +97,7 @@
         </p>
       </div>
 
-      <div class="hero__scroll"></div>
+      <!-- <div class="hero__scroll"></div> -->
 
       <div class="hero__animated">
         <h2 class="hero__animated-text hero__animated-left">
