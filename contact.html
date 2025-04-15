@@ -9,7 +9,7 @@
   <link rel="preload" href="/fonts/FiraMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/FiraMono-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Cookie Policy - Traffic Devils</title>
+  <title>Contact Us - Traffic Devils</title>
   <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="apple-touch-icon" href="./favicon.png">
   <meta name="description" content="We are a top-tier media buying company specializing in high-quality traffic, innovation, and scaling across various verticals and GEOs.">
@@ -66,124 +66,66 @@
         </div>
       </div>
     </div>
-    
-    <section class="policy">
-        <div class="policy__header">
-            <h1 class="policy__title">
-                Cookie Policy
-            </h1>
+
+    <section class="contact container">
+      <div class="contact__top">
+        <div class="contact__number">
+          <div class="contact__number-block">
+            <h3 class="contact__number-title" id="animatedNumber">
+              0
+            </h3>
+            <h3 class="contact__number-percent contact__mob">
+              %
+            </h3>
+          </div>
+          <h2 class="contact__title contact__title-mob">
+            <span>Almost</span>
+            <br>
+            Ready
+          </h2>
+          <div class="contact__number-info">
+            <h3 class="contact__number-percent">
+              %
+            </h3>
+            <p class="contact__text">
+              We’re polishing the final details. DROP your name and email, and we’ll notify you as soon as we launch!
+            </p>
+          </div>
         </div>
 
-        <div class="policy__block">
-            <div class="policy__block-left">
-                <nav class="policy__nav">
-                    <a href="cookie.html" class="policy__nav__link policy__nav__link-active">
-                        cookie policy
-                    </a>
-                    <a href="policy.html" class="policy__nav__link">
-                        Privacy policy
-                    </a>
-                    <a href="terms.html" class="policy__nav__link">
-                        Terms of use
-                    </a>
-                </nav>
-    
-                <div class="policy__date policy__text">
-                    Effective Date: 
-                    <br>
-                    15.05.2025
-                </div>    
-            </div>
+        <h2 class="contact__title" id="contactTitle">
+          <span>Almost</span><br>Ready
+        </h2>
+      </div>
 
-            <div class="policy__content">
-                <div class="policy__content-group">
-                    <h3 class="policy__subtitle">
-                        1. What Are Cookies?
-                    </h3>
-                    <p class="policy__text">
-                        Cookies are small text files stored on your device when you visit a website. They help improve user experience, remember preferences, and analyze site performance.
-                    </p>
-                </div>
-
-                <div class="policy__content-group">
-                    <h3 class="policy__subtitle">
-                        2. Types of Cookies We Use
-                    </h3>
-                    <ul class="policy__list">
-                        <li>
-                            <p class="policy__text">
-                                Essential Cookies – Required for website functionality.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="policy__text">
-                                Performance Cookies – Help us analyze site performance (e.g., Google Analytics).
-                            </p>
-                        </li>
-                        <li>
-                            <p class="policy__text">
-                                Functional Cookies – Store preferences like language settings.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="policy__text">
-                                Marketing Cookies – Used for tracking and advertising (if applicable).
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="policy__content-group">
-                    <h3 class="policy__subtitle">
-                        3. How We Use Cookies
-                    </h3>
-                    <p class="policy__text">
-                        We use cookies to:
-                    </p>
-                    <ul class="policy__list">
-                        <li>
-                            <p class="policy__text">
-                                Ensure website functionality.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="policy__text">
-                                Improve user experience.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="policy__text">
-                                Track and analyze visitor behavior for website optimization.
-                            </p>
-                        </li>
-                    </ul>
-                    <br>
-                    <p class="policy__text">
-                        We do not use cookies for targeted advertising.
-                    </p>
-                </div>
-
-                <div class="policy__content-group">
-                    <h3 class="policy__subtitle">
-                        4. Managing and Disabling Cookies
-                    </h3>
-                    <p class="policy__text">
-                        You can manage cookies through browser settings:
-                        <br>
-                        <br>
-                        Chrome: [Settings → Privacy & Security → Cookies and other site data]
-                        <br>
-                        Safari: [Preferences → Privacy → Manage Website Data]
-                        <br>
-                        <br>
-                        Disabling cookies may affect website functionality.
-                    </p>
-                </div>
-            </div>
+      <form action="" class="contact__form" name="submit-to-google-sheet">
+        <div class="contact__form-group">
+          <div class="contact__form-message" id="emailError">
+            This field cannot be empty
+          </div>
+          <input type="email" class="contact__input" placeholder="*YOUR EMAIL" name="E-MAIL" id="email" autocomplete="off">
         </div>
+        <div class="contact__form-group">
+          <div class="contact__form-message" id="nameError">
+            This field cannot be empty
+          </div>
+          <input type="text" class="contact__input" placeholder="*YOUR NAME" name="Name" id="name" autocomplete="off">  
+        </div>
+        <input type="text" class="contact__input" placeholder="YOUR PURPOSE" name="PURPOSE" id="purpose" autocomplete="off">
+        <button class="contact__btn" type="submit" id="submitBtn">
+          [ NOTIFY ME ]
+        </button>
+      </form>
+
+      <div class="contact__thx" id="thxBlock">
+        <p class="contact__thx-text">
+          Thanks for signing up! We'll let you know as soon as we’re live.
+        </p>
+      </div>
+
     </section>
-
-    <footer class="footer">
+    
+    <footer class="footer footer-contact">
       <div class="footer__container">
         <h3 class="footer__title">
           devils –
@@ -218,9 +160,9 @@
               </a>
             </nav>
 
-            <a href="contact.html" class="footer__btn btn-primary">
+            <!-- <a href="" class="footer__btn btn-primary">
               contact us
-            </a> 
+            </a> -->
 
             <div class="footer__row footer__details">
               <div class="footer__detail">
@@ -272,13 +214,13 @@
           </div>
         </div>
 
-        <div class="footer__mob">
+        <!-- <div class="footer__mob">
           <div class="footer__btn-decor"></div>
-          <a href="contact.html" class="footer__btn btn-primary footer__mob">
+          <a href="" class="footer__btn btn-primary footer__mob">
             contact us
           </a>
           <div class="footer__btn-decor"></div>
-        </div>
+        </div> -->
 
         <div class="footer__bottom">
           <div class="footer__row">
@@ -304,6 +246,7 @@
   <script type="module" src="./js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
    <script src="js/loader.js"></script>
+   <script src="./js/contact.js"></script>
 </body>
 
 </html>
